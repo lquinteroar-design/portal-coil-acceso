@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Acceso al Portal COIL | México–Colombia</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: #f1f5f9;
+      font-family: Arial, sans-serif;
+      color: #17375f;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 460px;
+      background: white;
+      padding: 42px 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(0,0,0,.09);
+      border-top: 5px solid #b72335;
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #627187;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      margin: 28px auto;
+      border: 4px solid #dce4ed;
+      border-top-color: #b72335;
+      border-radius: 50%;
+      animation: girar .8s linear infinite;
+    }
+
+    @keyframes girar {
+      to { transform: rotate(360deg); }
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #17375f;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 22px;
+    }
+
+    .footer {
+      margin-top: 28px;
+      font-size: 11px;
+      color: #8090a3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="title">COIL</div>
+
+    <h1>Registro de estudiantes</h1>
+
+    <p>
+      Universidad Francisco de Paula Santander Ocaña
+      <br>
+      Universidad del Caribe – México
+    </p>
+
+    <div class="spinner"></div>
+
+    <p id="mensaje">
+      Estamos abriendo el portal de registro…
+    </p>
+
+    <button id="abrirPortal" type="button">
+      Abrir portal de registro
+    </button>
+
+    <div class="footer">
+      Cooperación académica internacional · 2026-2
+    </div>
+
+  </div>
+
+  <script>
+    // PEGA AQUÍ LA URL REAL DE TU APLICACIÓN
+    const URL_PORTAL =
+      "https://script.google.com/macros/s/AKfycbzIBK9ms5Gi7-wMs37IKAkB0n3Tpz-7nG-Lh5O2kzlg7MYDoe78gpgO2EOwWFFX9SaD/exec";
+
+    function abrirPortal() {
+      if (URL_PORTAL.includes("PEGA_AQUI")) {
+        document.getElementById("mensaje").textContent =
+          "Debes configurar la URL del portal COIL.";
+        return;
+      }
+
+      window.location.replace(URL_PORTAL);
+    }
+
+    document.getElementById("abrirPortal")
+      .addEventListener("click", abrirPortal);
+
+    window.addEventListener("load", function() {
+      setTimeout(abrirPortal, 800);
+    });
+  </script>
+
+</body>
+</html>
